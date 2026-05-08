@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS Variables for Premium Styling */
+        :root {
+            --bg-dark: #0a0a0c;
+            --gold-primary: #c5a880;
+            --gold-glow: rgba(197, 168, 128, 0.15);
+            --card-bg: rgba(255, 255, 255, 0.02);
+            --card-border: rgba(197, 168, 128, 0.15);
+            --text-main: #f5f5f7;
+            --text-muted: #a0a0aa;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Subtle luxury background radial lighting */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--gold-glow) 0%, rgba(0, 0, 0, 0) 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Elegant Frame Box */
+        .coming-soon-card {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 4rem 3rem;
+            max-width: 600px;
+            width: 90%;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            animation: elegantFadeIn 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Abstract Top Icon */
+        .icon-container {
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        .icon-container svg {
+            width: 48px;
+            height: 48px;
+            fill: none;
+            stroke: var(--gold-primary);
+            stroke-width: 1;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            animation: pulseGlow 3s ease-in-out infinite alternate;
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8rem;
+            font-weight: 400;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 40%, var(--gold-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            margin: 2rem auto;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        p span {
+            color: var(--gold-primary);
+            font-weight: 400;
+            border-bottom: 1px solid rgba(197, 168, 128, 0.3);
+            padding-bottom: 2px;
+        }
+
+        .closing-text {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold-primary);
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        /* Animations */
+        @keyframes elegantFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                filter: drop-shadow(0 0 2px rgba(197, 168, 128, 0.2));
+            }
+            100% {
+                filter: drop-shadow(0 0 10px rgba(197, 168, 128, 0.6));
+            }
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 480px) {
+            .coming-soon-card {
+                padding: 3rem 1.5rem;
+                width: 92%;
+            }
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 5px;
+            }
+            p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="coming-soon-card">
+        <div class="icon-container">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+        </div>
+
+        <h1>Coming Soon</h1>
+        
+        <div class="divider"></div>
+        
+        <p>For further information, please contact your <br><span>Group Overseer</span>.</br></p>
+        
+        <div class="closing-text">Thank you</div>
+    </div>
+
+</body>
+</html>
